@@ -19,6 +19,14 @@ storageCitas.get("/", (req,res)=>{
         }
     );
 })
+storageCitas.get("/:cit_medico",(req,res)=>{
+    conex.query(
+        `SELECT * FROM cita where cit_medico=${req.params.cit_medico}`,
+        (err,data,fill)=>{
+            res.send(JSON.stringify(data));
+        }
+    )
+})
 storageCitas.post("/",(req,res)=>{
    
     const {id, nombre, id_responsable, estado, created_by, update_by, created_at, updated_at, deleted_at}=req.body;
