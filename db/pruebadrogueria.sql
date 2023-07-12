@@ -69,8 +69,14 @@
     ALTER TABLE cita ADD FOREIGN KEY(cit_estadoCita) REFERENCES estado_cita(estcita_id);
     ALTER TABLE cita ADD FOREIGN KEY (cit_datosUsuario) REFERENCES usuario(usu_id);
     INSERT INTO especialidad (esp_nombre) VALUES ('Medico quirurgico');
+    INSERT INTO especialidad (esp_nombre) VALUES ('Medico cirujano');
+    INSERT INTO especialidad (esp_nombre) VALUES ('Medico ambulatorio');
     INSERT INTO consultorio (cons_nombre) VALUES ('Carvajal S.A.S');
     INSERT INTO medico (med_nroMatriculaProfesional,med_nombrecompleto, med_consultorio, med_especialidad) VALUES ('1356888','Stiven Carvajal','1','1');
+    INSERT INTO medico (med_nroMatriculaProfesional,med_nombrecompleto, med_consultorio, med_especialidad) VALUES ('1358968','Eduardo Mantilla','1','3');
+    INSERT INTO medico (med_nroMatriculaProfesional,med_nombrecompleto, med_consultorio, med_especialidad) VALUES ('13563652','David Escalante','1','2');
+
+
     INSERT INTO estado_cita (estcita_nombre) VALUES ('en espera');
     insert into tipo_documento (tipdoc_nombre,tipdoc_abreviatura) values ('Cedula de Ciudadania','Cc');
     insert into tipo_documento (tipdoc_nombre,tipdoc_abreviatura) values ('Tarjeta de Identidad','T.i');
