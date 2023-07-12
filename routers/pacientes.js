@@ -18,7 +18,17 @@ storagePacientes.get("/", (req,res)=>{
             res.send(JSON.stringify(data));
         }
     );
+    
 })
+storagePacientes.get("/:id",(req,res)=>{
+    conex.query(
+        `SELECT * FROM cita where cit_datosUsuario=${req.params.id}`,
+        
+        (err,data,fill)=>{
+            res.send(JSON.stringify(data));
+        }
+    )
+});
 storagePacientes.post("/",(req,res)=>{
    
     const {id, nombre, id_responsable, estado, created_by, update_by, created_at, updated_at, deleted_at}=req.body;
