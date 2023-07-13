@@ -97,5 +97,7 @@
     INSERT INTO cita(cit_fecha,cit_estadoCita,cit_medico,cit_datosUsuario) VALUES ('2023-08-08',1,1356888,321);
 
     INSERT INTO cita(cit_fecha,cit_estadoCita,cit_medico,cit_datosUsuario) VALUES ('2023-09-10',1,1356888,74);
+    INSERT INTO cita(cit_fecha,cit_estadoCita,cit_medico,cit_datosUsuario) VALUES ('2023-09-10',1,1356888,321);
+    INSERT INTO cita(cit_fecha,cit_estadoCita,cit_medico,cit_datosUsuario) VALUES ('2023-09-10',1,1356888,123);
 
 

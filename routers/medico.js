@@ -23,7 +23,18 @@ storageMedico.get("/:especialidad", (req,res)=>{
 storageMedico.get("/", (req,res)=>{
     conex.query(
         `SELECT med_nombrecompleto, med_consultorio FROM medico`,
-        (err,data,fill)=>{
+        (err,data,fill)=>{  
+            res.send(JSON.stringify(data));
+        }
+    );
+})
+storageMedico.get("/especialidad/:medico/:dia", (req,res)=>{
+    console.log("hola");
+    let data = req.params; 
+    conex.query(
+               `SELECT medico.med_nroMatriculaProfesional as matricula, medico.med_nombrecompleto as medico, cita.cit_fecha as fecha, COUNT(medico.med_nroMatriculaProfesional) as cantidad FROM medico INNER JOIN cita ON cita.cit_medico = medico.med_nroMatriculaProfesional where medico.med_nroMatriculaProfesional=? and cita.cit_fecha=?;`,
+               Object.values(data),
+               (err,data,fill)=>{
             res.send(JSON.stringify(data));
         }
     );
