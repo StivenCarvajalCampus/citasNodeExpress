@@ -19,6 +19,15 @@ storageMedico.get("/:especialidad", (req,res)=>{
         }
     );
 })
+
+storageMedico.get("/", (req,res)=>{
+    conex.query(
+        `SELECT med_nombrecompleto, med_consultorio FROM medico`,
+        (err,data,fill)=>{
+            res.send(JSON.stringify(data));
+        }
+    );
+})
 storageMedico.post("/",(req,res)=>{
    
     const {id, nombre, id_responsable, estado, created_by, update_by, created_at, updated_at, deleted_at}=req.body;
